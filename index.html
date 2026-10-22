@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Applicant Insights · Head Hunters</title>
+  <meta name="description" content="Compare interview competencies across applicants, then explore an individual candidate's assessment profile.">
+  <link rel="icon" href="logo.png"><link rel="stylesheet" href="report.css">
+  <script defer src="report-data.js"></script><script defer src="interview-evidence.js"></script><script defer src="report.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <a class="brandmark" href="index.html" aria-label="Head Hunters home"><img src="logo.png" alt="Head Hunters"></a>
+    <nav aria-label="Main navigation"><a class="nav-active" href="index.html" aria-current="page">Applicant insights</a><a href="applicant.html">Applicant experience <span aria-hidden="true">↗</span></a></nav>
+    <div class="workspace"><span class="workspace-icon" style="font-size:15px">HH</span><span>Recruiter workspace</span></div>
+  </header>
+  <main class="report-shell">
+    <div class="breadcrumbs">Recruiting <span>/</span> Interview reports <span>/</span> <strong>Applicant insights</strong></div>
+    <div class="page-heading"><div><p class="eyebrow">POST-INTERVIEW REPORT · PROTOTYPE 01</p><h1>A clearer view of your candidates.</h1><p class="intro">Compare the whole applicant pool. Explore the person behind each score.</p></div><button id="export" class="button button-outline"><span aria-hidden="true">↓</span> Export scores</button></div>
+    <div class="report-context"><div class="role-field"><label for="role">JOB POSITION</label><select id="role"><option value="ai">AI Software Engineer</option><option value="fe">Senior Frontend Engineer</option><option value="de">Data Engineer</option></select></div><div class="context-divider"></div><span class="status-dot"></span><span>AI pre-view interviews completed</span><span class="demo-badge">DEMO DATA</span></div>
+    <div class="demo-note"><span class="info-symbol" aria-hidden="true">i</span><p>Fictional applicants and illustrative interview scores. Work-style ratings describe example workplace behaviors; they are not personality diagnoses or hiring decisions.</p></div>
+    <div id="submission-notice" class="submission-notice" hidden></div>
+    <div class="overview-grid"><div class="overview-stat"><span>Applicants interviewed</span><strong>08 <small>in this role</small></strong></div><div class="overview-stat"><span>Competencies compared</span><strong>08 <small>ranked independently</small></strong></div><div class="overview-stat"><span>Candidate profiles</span><strong>05 <small>radar views per person</small></strong></div><div class="overview-stat stat-action"><span>Start exploring</span><p>Click any applicant’s bar<br><strong>to open their profile <span aria-hidden="true">↘</span></strong></p></div></div>
+    <section class="rankings-section" aria-labelledby="rankings-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / THE APPLICANT POOL</p><h2 id="rankings-title">One role. Different strengths.</h2><p>Each chart ranks all 8 applicants, highest to lowest. Scores use a 0–100 scale.</p></div><div class="segmented" aria-label="Competency category"><button data-filter="all" aria-pressed="true">All competencies</button><button data-filter="technical" aria-pressed="false">Technical</button><button data-filter="people" aria-pressed="false">People & thinking</button><button data-filter="delivery" aria-pressed="false">Execution & ownership</button></div></div>
+      <div class="legend-row"><div id="candidate-legend" class="candidate-legend" aria-label="Applicant color key"></div><span class="legend-hint"><span class="selected-swatch"></span> Outline = selected</span></div>
+      <div id="rankings" class="rankings-grid"></div>
+    </section>
+    <section class="profile-section" aria-labelledby="profile-title">
+      <div class="section-heading"><div><p class="eyebrow">02 / THE INDIVIDUAL</p><h2 id="profile-title" tabindex="-1">Meet the person behind the bars.</h2><p>Select any bar above to update this profile and all five radar charts.</p></div><label class="average-toggle"><input id="show-average" type="checkbox" checked><span>Show pool average</span></label></div>
+      <div id="profile-live" class="sr-only" role="status" aria-live="polite"></div>
+      <div id="candidate-profile"></div>
+    </section>
+    <footer><span>HEAD HUNTERS <span class="footer-dot">/</span> Applicant insights</span><span>8 fictional applicants · Consistent criteria · Human review</span></footer>
+  </main>
+  <aside id="selection-dock" class="selection-dock" aria-label="Selected applicant" hidden><span id="dock-name"></span><button id="view-profile">View radar profile ↓</button><button id="close-dock" aria-label="Dismiss selected applicant shortcut">×</button></aside>
+</body>
+</html>

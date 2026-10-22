@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Applicant experience · Head Hunters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><img src="logo.png" alt="Head Hunters: filtering talent that fits"><h1>Head Hunters</h1></div>
+  <p>Pick a role and add your resume to begin the AI pre-view process.</p>
+  <a href="index.html" style="color:var(--accent);font-size:14px">View recruiter report directly →</a>
+</header>
+<main>
+  <section id="step-job" aria-labelledby="h-job">
+    <h2 id="h-job">1. Choose a role</h2>
+    <div id="jobs" class="jobs"></div>
+  </section>
+  <section id="step-resume" aria-labelledby="h-resume" hidden>
+    <h2 id="h-resume">2. Add your resume</h2>
+    <label class="file">Upload a .pdf, .txt or .md file
+      <input type="file" id="file" accept=".pdf,.txt,.md">
+    </label>
+    <label for="resume">Or paste the text</label>
+    <textarea id="resume" rows="12" placeholder="Paste your resume here"></textarea>
+    <p id="error" class="error" role="alert"></p>
+    <p class="note">Report prototype: the AI pre-view interview is skipped. Continue to a recruiter report with fictional applicant data. Your resume is not evaluated or stored.</p>
+    <button id="analyze" class="primary">Continue to recruiter report →</button>
+  </section>
+  <section id="results" aria-live="polite" hidden></section>
+</main>
+<dialog id="note" aria-labelledby="note-title">
+  <h3 id="note-title">Backend view</h3>
+  <p>This is backend information that is not supplied to the candidates, but is shown in this demo to demonstrate what's occurring on the backend. The next step of the process would be that the candidate would receive an invitation to conduct an online interview, which we'll demonstrate next.</p>
+  <button class="primary" id="note-ok">Got it, start the interview</button>
+</dialog>
+<script src="interview.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
